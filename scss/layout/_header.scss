@@ -46,7 +46,6 @@ header {
     &-input {
         transition: all .3s ease-in-out;
         @include layout($p: 0 1em 0 2.5em, $w: calc(100% - 5em), $h: 2.5em, $bor: 1px solid #cdcdcd);
-        
         @include meqe($breakpoint-m) {
             width: 300px;
             
@@ -54,6 +53,10 @@ header {
                 width: 400px;
                 animation: blink 2s step-end infinite;
             }
+        }
+
+        &::placeholder {
+            color: #adb3bb;
         }
     }
 }

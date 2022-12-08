@@ -353,7 +353,7 @@ button {
 p {
   font-size: 0.9em;
   font-weight: 300;
-  color: #797e83;
+  color: #646a6f;
 }
 
 /* ============================================= */
@@ -641,6 +641,10 @@ header {
     width: 400px;
     animation: blink 2s step-end infinite;
   }
+}
+
+#search-input::placeholder {
+  color: #adb3bb;
 }
 
 /* ============================================= */
