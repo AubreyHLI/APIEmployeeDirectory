@@ -1,0 +1,68 @@
+// ============================================= 
+//                  Mixins                       
+// ============================================= 
+
+// Flexbox
+@mixin flexy($dis: flex, $dire: null, $justi: null, $align: center, $lh: null) {
+	display: $dis;
+	flex-direction: $dire;
+	justify-content: $justi;
+    align-items: $align;
+    line-height: $lh;
+    @content;
+}
+
+// Grid
+@mixin gridy-col($dis: grid, $minCol: null, $gap: null, $jusItem: null, $pad: null) {
+    display: $dis;
+    grid-template-columns: repeat(auto-fit, minmax($minCol, 1fr));
+    gap: $gap;
+    justify-items: $jusItem;
+    padding: $pad;
+    @content;
+}
+
+// Layout
+@mixin pos-dis($pos: null, $dis: null, $h: null, $w: null, $t: null, $b: null, $l: null, $r: null) {
+    position: $pos;
+    display: $dis;
+    height: $h;
+    width: $w;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+    @content;
+}
+
+@mixin layout($m: null, $p: null, $w: null, $h: null, $maxw: null, $minw: null, $rad:null, $bor: null) {
+    margin: $m;
+    padding: $p;
+    width: $w;
+    height: $h;
+    max-width: $maxw;
+    min-width: $minw;
+    border-radius: $rad;
+    border: $bor;
+}
+
+// Font Design
+@mixin font-design($fs: null, $fw: null, $fc: null, $bgc: null) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $fc;
+    background-color: $bgc;
+}
+
+
+// Media Queries
+@mixin meqe($bpvalue) {
+	@if $bpvalue == null {
+		@error '`#{$bpvalue}` is not a valid breakpoint value.';
+	}
+	@else {
+		@media (min-width: $bpvalue) {
+			@content; //允许media query更改rule properties
+		}
+	}
+}

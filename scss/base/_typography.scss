@@ -1,0 +1,44 @@
+/* ============================================= */
+/*              Base Styles                      */
+/* ============================================= */
+
+* {
+    box-sizing: border-box;
+    @include layout($m: 0, $p: 0);
+}
+
+button {
+    border: none;
+}
+
+p {
+    @include font-design($fc: $color-font-secondary, $fs: .9em, $fw: 300);
+}
+
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */
+
+body {
+    font-family: $font-family-primary;
+    color: $color-font-primary;
+    @include layout($m: 0 auto, $minw: $min-width, $maxw: $max-width);
+}
+
+hr {
+    background-color: $color-secondary;
+    border: $color-secondary;
+    @include layout($m: 1em, $h: 1px);
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.cap {
+    text-transform: capitalize;
+}
+
+.upper {
+    text-transform: uppercase;
+}

@@ -1,0 +1,36 @@
+/* ============================================= */
+/*                  Buttons                      */
+/* ============================================= */
+
+.btn {
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: transform .2s;
+        background: $color-secondary;
+        @include meqe($breakpoint-s) {
+            background: $btn-hover;
+        }
+    }
+
+    &-arrow {
+        margin: 0 20px;
+        border-radius: 5px;
+        transition: transform .2s;
+        @include font-design($fs: 5em, $fc: $btn-primary);
+        @include meqe($breakpoint-s) {
+            color: $color-white;
+        }
+
+    }
+   
+    &-close {
+        padding: 2px 6px;
+        border-radius: 2px;
+        @include pos-dis($pos: absolute, $t: 12px, $r: 12px);  
+        @include font-design($fs: 90%, $fw: 400, $fc: $color-white, $bgc: $btn-primary);
+    }
+}
+
+

@@ -1,0 +1,53 @@
+/* ============================================= */
+/*                    Cards                      */
+/* ============================================= */
+
+.card {
+    line-height: 1.75;
+    padding: 8px 0;
+    border-radius: 5px;  
+    transition: all .2s ease-in;
+    @include flexy($dire: column);
+    @include meqe($breakpoint-m) {
+        @include flexy($dis: null, $dire: row, $align: normal);
+        column-gap: 16px;
+        padding: 10px 16px;        
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: $color-bg;  
+    }
+
+    &-img-container {
+        justify-content: center;  /*vertical center*/
+        height: 103px;
+        @include meqe($breakpoint-m) {
+            height: 133px;
+        }
+    }
+
+    &-info-container{
+        @include flexy($dire: column, $justi: space-evenly);
+        @include meqe($breakpoint-m) {
+            width: calc(100% - 130px);
+            align-items: flex-start; 
+        }
+    
+        p {
+            text-align: center;
+            width: 180px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include meqe($breakpoint-m) {
+                width: 100%;
+                text-align: start;
+            }
+        }
+    }
+
+    &-hide {
+        display: none;
+    }
+}

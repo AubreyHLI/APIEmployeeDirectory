@@ -1,0 +1,15 @@
+/* ============================================= */
+/*                   Images                      */
+/* ============================================= */
+
+img {
+    box-shadow: 3px 3px 1px #0000000f;
+    @include layout($w: 100px, $rad: 12px);
+    @include meqe($breakpoint-m) {
+        width: 130px;
+    }
+
+    .modal & {
+        width: 130px;
+    }
+}

@@ -1,0 +1,59 @@
+/* ============================================= */
+/*                   Header                      */
+/* ============================================= */
+
+header {
+    background-color: $color-primary;
+    @include layout($m: 0 0 2em 0, $h: 150px);
+}
+
+.header-container {
+    height: 132px;
+
+    h1{
+        @include layout($m: 0 auto, $p: 20px, $w: min-content);
+        @include font-design($fs: 40px, $fw: 800);
+        @include meqe($breakpoint-m) {
+            font-size: 56px;
+            @include layout($p: 34px, $w: max-content);
+        }
+    }
+}
+
+.search-container {
+    margin: 0 auto;
+    @include pos-dis($dis: inline-block, $h: 3em, $w: 100%);
+
+    & > * {
+        line-height: 1.5em;
+        border-radius: 1.5em;
+    }
+}
+
+
+#search {
+    &-icon {
+        cursor: pointer;
+        border: none;
+        background: $color-white;
+        @include pos-dis($pos: relative, $h: 2em, $w: 2em, $l: 42px);
+       
+        &:hover {
+            background: $color-bg;
+        }
+    }
+
+    &-input {
+        transition: all .3s ease-in-out;
+        @include layout($p: 0 1em 0 2.5em, $w: calc(100% - 5em), $h: 2.5em, $bor: 1px solid #cdcdcd);
+        
+        @include meqe($breakpoint-m) {
+            width: 300px;
+            
+            &:focus {
+                width: 400px;
+                animation: blink 2s step-end infinite;
+            }
+        }
+    }
+}

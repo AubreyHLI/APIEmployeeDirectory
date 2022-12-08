@@ -1,0 +1,31 @@
+/* ============================================= */
+/*                    Modal                      */
+/* ============================================= */
+
+.modal {
+    overflow: scroll;
+    background-color: $color-white;
+    text-align: center;
+    line-height: 1.75;
+    @include pos-dis($pos: absolute, $w: 100vw, $t: 20vh);
+    @include layout($p: 30px, $minw: 320px);
+
+    @include meqe($breakpoint-s) {
+        width: $modal-width;
+        left: calc((100% - 360px) / 2);
+    }
+
+    &-container {
+        z-index: 100;
+        overflow: auto;
+        background: $color-overlay;
+        @include pos-dis($pos: fixed, $dis: none, $h: 100%, $w: 100%, $t: 0, $b: 0, $l: 0, $r: 0);
+    }
+
+    &-btn-container{
+        z-index: 200;
+        @include pos-dis($pos: fixed, $w: 100%, $t: 45vh);
+        @include flexy($dire: row, $justi: space-between, $align: null);
+        @include layout($minw: 320px, $p: 0 calc((100% - 360px) / 2 - 100px));
+    }
+}

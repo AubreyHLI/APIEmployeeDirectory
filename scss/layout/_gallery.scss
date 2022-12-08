@@ -1,0 +1,17 @@
+/* ============================================= */
+/*                  Gallery                      */
+/* ============================================= */
+
+#gallery{
+    @include gridy-col($minCol: 200px, $gap: 16px, $jusItem: stretch, $pad: 10px) {
+        justify-content: space-evenly;   
+    }
+    
+    @include meqe($breakpoint-m) {
+        @include gridy-col($dis: null, $minCol: 320px, $jusItem: normal, $pad: 10px 20px)
+    }
+
+    @include meqe($breakpoint-l) {
+        @include gridy-col($dis: null, $minCol: 360px, $pad: 10px 30px)
+    }
+}
