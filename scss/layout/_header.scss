@@ -56,7 +56,7 @@ header {
         }
 
         &::placeholder {
-            color: #adb3bb;
+            color: $color-font-placeholder;
         }
     }
 }
