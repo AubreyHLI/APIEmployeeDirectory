@@ -518,6 +518,10 @@ img {
   }
 }
 
+.card-position {
+  font-weight: 500;
+}
+
 .card-hide {
   display: none;
 }
